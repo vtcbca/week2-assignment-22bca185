@@ -1,0 +1,95 @@
+c]CREATE TABLES.
+
+1.create table stud(id int primary key,name text); 
+
+1. create table stud_detail
+  (
+   id int references stud(id),
+   city varchar(30),
+   mobile no
+    );
+
+
+2.INSERT TABLE.
+
+ insert into stud values(1,'tina');
+ insert into stud values(2,'jiya');
+ insert into stud values(3,'renu');
+ insert into stud values(4,'kinjal');
+ insert into stud values(5,'sonal');
+ insert into stud values(6,'hina');
+ insert into stud values(7,'riya');
+ insert into stud values(8,'vihu');
+ insert into stud values(9,'peru');
+ insert into stud values(10,'lina');
+
+ select*from stud;
+1|tina
+2|jiya
+3|renu
+4|kinjal
+5|sonal
+6|hina
+7|riya
+8|vihu
+9|peru
+10|lina
+
+2.INSERT TABLE.
+
+ insert into stud_detail values(1,'surat',9327861620);
+ insert into stud_detail values(2,'surat',9458795703);
+ insert into stud_detail values(3,'bardoli',0978978767);
+ insert into stud_detail values(4,'vapi',9624481861);
+ insert into stud_detail values(5,'songad',0859405793);
+ insert into stud_detail values(6,'bardoli',0987657652);
+ insert into stud_detail values(7,'valsad',0987623487);
+ insert into stud_detail values(8,'songad',5647856213);
+ insert into stud_detail values(9,'chalthan',6578867657);
+ insert into stud_detail values(10,'vapi',86932226678);
+
+select*from stud_detail;
+1|surat|9327861620
+2|surat|9458795703
+3|bardoli|978978767
+4|vapi|9624481861
+5|songad|859405793
+6|bardoli|987657652
+7|valsad|987623487
+8|songad|5647856213
+9|chalthan|6578867657
+10|vapi|86932226678
+
+
+ 3.DISPLAY WHOSE STUDENT COME FROM THE SURAT CITY.
+  select*from stud s,stud_detail sd
+    where s.id=sd.id and city='surat';
+
+1|tina|1|surat|9327861620
+2|jiya|2|surat|9458795703
+
+  
+ 4.DISPLAY STUDENT DETAILS WHOSE CITY NAME START WITH 'B'.
+  select s.id,s.name,sd.city,sd.mobile from stud s, stud_detail sd
+   where s.id=sd.id and city like 'b%';
+
+3|renu|bardoli|978978767
+6|hina|bardoli|987657652
+
+ 5.UPDATE MOBILENO WHO ARE COMMING FROM 'SURAT'. 
+ update stud_detail set mobile=5356567657
+    where city='surat';
+
+select*from stud_detail;
+
+1|surat|5356567657
+2|surat|5356567657
+3|bardoli|978978767
+4|vapi|9624481861
+5|songad|859405793
+6|bardoli|987657652
+7|valsad|987623487
+8|songad|5647856213
+9|chalthan|6578867657
+10|vapi|86932226678
+
