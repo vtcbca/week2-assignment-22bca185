@@ -9,7 +9,7 @@
 1. Create table
 ----->
 	import sqlite3 as pp
-	con=vp.connect("ems.db")
+	con=pp.connect("ems.db")
 	c="create table employee(eid int primary key,ename text,dept text,basic int,branch text)"
 	cur=con.cursor()
 	cur.execute(c)
@@ -19,7 +19,7 @@
 2. Insert 5 Records directly, 5 records using tuple and 5 records using taking input from user.
 ----->
 	import sqlite3 as pp
-	con=vp.connect("ems.db")
+	con=pp.connect("ems.db")
 	cur=con.cursor()
 	#insert record directly
 	insert into employee values(1,'hina','Account',2300,'jolva')
