@@ -22,11 +22,11 @@
 	con=vp.connect("ems.db")
 	cur=con.cursor()
 	#insert record directly
-	cur.execute('''insert into employee values(1,'hina','Account',2300,'jolva')
-	cur.execute('''insert into employee values(2,'ruhi','Inventory',6000,'surat')
-	cur.execute('''insert into employee values(3,'tina','HR',9000,'bardoli')
-	cur.execute('''insert into employee values(4,'shiv','IT',5000,'navsari')
-	cur.execute('''insert into employee values(5,'sonal','HR',34000,'surat')
+	insert into employee values(1,'hina','Account',2300,'jolva')
+	                           (2,'ruhi','Inventory',6000,'surat')
+	                           (3,'tina','HR',9000,'bardoli')
+	                           (4,'shiv','IT',5000,'navsari')
+	                           (5,'sonal','HR',34000,'surat')
 	con.commit()
 	# insert record using tuple
 	p=[(6,'hina','Account',9000,'vesu'),
@@ -64,7 +64,7 @@
 	
 4. Print All records.
 ----->
-	import sqlite3 sa vp
+	import sqlite3 sa pp
 	con=pp.connect("ems.db")
 	q5="select * from employee"
 	cur=con.cursor()
@@ -82,7 +82,7 @@
 5. Print records where dept is "HR" and "IT".
 ----->
 	import sqlite3 as pp
-	con=vp.connect("ems.db")
+	con=pp.connect("ems.db")
 	q6="select * from employee where dept in('HR','IT')"
 	cur=con.cursor()
 	cur.execute(q6)
@@ -115,7 +115,7 @@
 
 7. Print records where basic is >6000.
 ----->
-	import sqlite3 as 
+	import sqlite3 as pp
 	con=pp.connect("ems.db")
 	q8="select * from employee where basic>6000"
 	cur=con.cursor()
@@ -133,7 +133,7 @@
 8. Print records whrere employee name second character is "r".
 ----->
 	import sqlite3 as pp
-	con=vp.connect("ems.db")
+	con=pp.connect("ems.db")
 	q9="select * from employee where ename like'_r%'"
 	cur=con.cursor()
 	cur.execute(q9)
